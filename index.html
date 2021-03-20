@@ -3,234 +3,334 @@
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en">
-<!--<![endif]-->
+    <html
+    lang="en"> <!--<![endif]-->
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
 
-    <title>Course material :Data storage, sharing & security</title>
+        <title>Course material :Data storage, sharing & security</title>
 
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/stroke.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/stroke.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/animate.css">
+        <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shCore.css" media="all">
-    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shThemeRDark.css" media="all">
+        <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shCore.css" media="all">
+        <link
+        rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shThemeRDark.css" media="all">
 
-    <!-- CUSTOM -->
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
+        <!-- CUSTOM -->
+        <link rel="stylesheet" type="text/css" href="css/custom.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+              <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
 
-</head>
+    </head>
 
-<body>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+    <body>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">
+            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+        </button>
 
-    <script>
-        var mybutton = document.getElementById("myBtn");
-        window.onscroll = function() {scrollFunction()};
-        function scrollFunction() {
-            if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
+        <script>
+            var mybutton = document.getElementById("myBtn");
+            window.onscroll = function () {
+                scrollFunction()
+            };
+            function scrollFunction() {
+                if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
             }
-        }
-        function topFunction() {
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-            document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
-        }
+            function topFunction() {
+                window.scrollTo({top: 0, behavior: 'smooth'})
+                document.documentElement.scrollTo({top: 0, behavior: 'smooth'})
+            }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            document.querySelector('#mode').addEventListener('click',()=>{
-                document.querySelector('html').classList.toggle('dark');
-            })
-        });
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector('#mode').addEventListener('click', () => {
+                    document.querySelector('html').classList.toggle('dark');
+                })
+            });
+        </script>
 
+        <div id="wrapper">
 
-    </script>
-
-    <div id="wrapper">
-
-        <div id="mode" >
-            <div class="dark">
-                <svg aria-hidden="true" viewBox="0 0 512 512">
-                    <title>lightmode</title>
-                    <path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path>
-                </svg>
+            <div id="mode">
+                <div class="dark">
+                    <svg aria-hidden="true" viewbox="0 0 512 512">
+                        <title>lightmode</title>
+                        <path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path>
+                    </svg>
+                </div>
+                <div class="light">
+                    <svg aria-hidden="true" viewbox="0 0 512 512">
+                        <title>darkmode</title>
+                        <path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path>
+                    </svg>
+                </div>
             </div>
-            <div class="light">
-                <svg aria-hidden="true" viewBox="0 0 512 512">
-                    <title>darkmode</title>
-                    <path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path>
-                </svg>
-            </div>
-        </div>
 
-        <div class="container">
+            <div class="container">
 
-            <section id="top" class="section docs-heading">
+                <section id="top" class="section docs-heading">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="big-title text-center">
+                                <h1>Course materials</h1>
+                                <p class="lead">For ESME/ING1 by
+                                    <a href="https://elbazi.co">Zakaria EL BAZI</a>
+                                </p>
+                            </div>
+                            <!-- end title -->
+                        </div>
+                        <!-- end 12 -->
+                    </div>
+                    <!-- end row -->
+
+                    <hr>
+
+                </section>
+                <!-- end section -->
 
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="big-title text-center">
-                            <h1>Course materials</h1>
-                            <p class="lead">For ESME/ING1 by <a href="https://elbazi.co">Zakaria EL BAZI</a></p>
-                        </div>
-                        <!-- end title -->
+
+                    <div class="col-md-3">
+                        <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                            <ul class="nav">
+                                <li>
+                                    <a href="#line1">Introduction course</a>
+                                </li>
+                                <li>
+                                    <a href="#line2">Data sharing & storage 1</a>
+                                </li>
+                                <li>
+                                    <a href="#line3">Practical session</a>
+                                </li>
+
+                            </ul>
+                        </nav>
                     </div>
-                    <!-- end 12 -->
-                </div>
-                <!-- end row -->
+                    <div class="col-md-9">
+                        <section class="welcome">
 
-                <hr>
+                            <div class="row">
+                                <div class="col-md-12 left-align">
+                                    <h2 class="dark-text">Data storage, sharing & security<hr></h2>
+                                    <div class="row">
 
-            </section>
-            <!-- end section -->
+                                        <div class="col-md-12 full">
+                                            <div>
+                                                <p>A course to introduce you to the field of cyber security in general and in the context of connected cities and IoT projects in particular.
+                                                                                                    This course is basically for beginners and does not require a lot of advanced computer knowledge, but some knowledge is needed in IoT to know how to manipulate the arduino in addition to some basic knowledge in python.
+                                                </p>
 
-            <div class="row">
-
-                <div class="col-md-3">
-                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
-                        <ul class="nav">
-                            <li><a href="#line1">Introduction course</a></li>
-                            <li><a href="#line2">Data sharing & storage 1</a></li>
-                            <li><a href="#line3">Practical session</a></li>
-
-                        </ul>
-                    </nav >
-                </div>
-                <div class="col-md-9">
-                    <section class="welcome">
-
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                               <h2 class="dark-text">Data storage, sharing & security<hr></h2>
-                                <div class="row">
-
-                                    <div class="col-md-12 full">
-                                        <div>
-                                            <p>A course to introduce you to the field of cyber security in general and in the context of connected cities and IoT projects in particular.
-                                                This course is basically for beginners and does not require a lot of advanced computer knowledge, but some knowledge is needed in IoT to know how to manipulate the arduino in addition to some basic knowledge in python. 
-                                            </p> 
-
-                                            <h4>Course Objectives</h4>
-                                            <ol>
-                                                <li>Data collection and processing (IoT, mobile and web apps, etc.)</li>
-                                                <li>Cyberattacks risks and challenges (Data breaches, etc).</li>
-                                                <li>IoT & smart city monitoring (extending your existing projects)</li>
-                                                <li>Data protection & privacy</li>
-                                                <li>Cybersecurity roles and career paths</li>
-                                            </ol>
+                                                <h4>Course Objectives</h4>
+                                                <ol>
+                                                    <li>Data collection and processing (IoT, mobile and web apps, etc.)</li>
+                                                    <li>Cyberattacks risks and challenges (Data breaches, etc).</li>
+                                                    <li>IoT & smart city monitoring (extending your existing projects)</li>
+                                                    <li>Data protection & privacy</li>
+                                                    <li>Cybersecurity roles and career paths</li>
+                                                </ol>
+                                            </div>
                                         </div>
+
                                     </div>
-
+                                    <!-- end row -->
                                 </div>
-                                <!-- end row -->
                             </div>
-                        </div>
-                    </section>
+                        </section>
 
-                    <section id="line1" class="section">
+                        <section id="line1" class="section">
 
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Introduction course<hr></h2>
+                            <div class="row">
+                                <div class="col-md-12 left-align">
+                                    <h2 class="dark-text">Introduction course<hr></h2>
+                                </div>
+                                <!-- end col -->
+                                <ol>
+                                    <li>Smart cities : What are they and how they work</li>
+                                    <li>Overview on IoT projects</li>
+                                    <li>Point of failures and challenges</li>
+                                    <li>Introduction to Cybersecurity</li>
+                                </ol>
+                                Please find the slides here :
+                                <a href="#" class="btn btn-info">Slides of first session</a>
+                                <br><br><br>
+                                <div id="adobe-dc-view" style="height: 500px; width: 800px;"></div>
+                                <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+                                <script type="text/javascript">
+                                    document.addEventListener("adobe_dc_view_sdk.ready", function () {
+                                        var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+                                        adobeDCView.previewFile({
+                                            content: {
+                                                location: {
+                                                    url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea%20Brochure.pdf"
+                                                }
+                                            },
+                                            metaData: {
+                                                fileName: "Bodea Brochure.pdf"
+                                            }
+                                        }, {embedMode: "SIZED_CONTAINER"});
+                                    });
+                                </script>
+
                             </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
+                            <!-- end row -->
 
-                     
-                        <!-- end row -->
 
-                    </section>
-                    <!-- end section -->
+                            <!-- end row -->
 
-                    <section id="line2" class="section">
+                        </section>
+                        <!-- end section -->
 
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Data sharing & storage 1 <hr></h2>
+                        <section id="line2" class="section">
+
+                            <div class="row">
+                                <div class="col-md-12 left-align">
+                                    <h2 class="dark-text">Data sharing & storage 1
+                                        <hr></h2>
+                                </div>
+                                <!-- end col -->
                             </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
+                            <!-- end row -->
 
 
-                    </section>
-                    <!-- end section -->
+                        </section>
+                        <!-- end section -->
 
-                    <section id="line3" class="section">
+                        <section id="line3" class="section">
 
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Practical session <hr></h2>
+                            <div class="row">
+                                <div class="col-md-12 left-align">
+                                    <h2 class="dark-text">Practical session
+                                        <hr></h2>
+                                </div>
+                                <!-- end col -->
                             </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-                        <h4>The code to connect to Arduino using python</h4>
-                        <script src="https://gist.github.com/Z4ck404/27ecec622ad9582744cd41c703fe162a.js"></script>
-                        
-                        <b>Before runing the code, please read the following :</b>
-                        <ol>
-                            <li>Make sure to have python installed in your machine :</li>
-                            To know if python is install, open a command line and type python ! if you get an error such as <b>python is not known</b>, then install python as explained in  <a href="https://www.python.org/downloads/">this tutorial</a>.
-                            <li>Install the necessary python packages ( <a href="https://pip.pypa.io/en/stable/installing/">pip</a>) and liberaries </li>
-                            - Install pyserial with this command in your terminal : <b>pip install pyserial</b> <br>
-                            - Install elasticsearch python liberary : <b>pip install elasticsearch</b>
-                            
-                        </ol>
-                    </section>
-                    <!-- end section -->
+                            <!-- end row -->
+                            <h4>The code to connect to Arduino using python</h4>
+                            <script src="https://gist.github.com/Z4ck404/27ecec622ad9582744cd41c703fe162a.js"></script>
 
+                            <b>Before runing the code, please read the following :</b>
+                            <ol>
+                                <li>Make sure to have python installed in your machine :</li>
+                                To know if python is install, open a command line and type python ! if you get an error such as
+                                <b>python is not known</b>, then install python as explained in
+                                <a href="https://www.python.org/downloads/">this tutorial</a>.
+                                <li>Install the necessary python packages (
+                                    <a href="https://pip.pypa.io/en/stable/installing/">pip</a>) and liberaries
+                                </li>
+                                - Install
+                                <a href="https://pypi.org/project/pyserial/">pyserial</a>
+                                with this command in your terminal :
+                                <b>pip install pyserial</b>
+                                <br>
+                                - Install
+                                <a href="https://pypi.org/project/elasticsearch7/">elasticsearch</a>
+                                python liberary :
+                                <b>pip install elasticsearch</b>
+                                <li>
+                                    Install and run elasticsearch in your machine</li>
+                                <ol>
+                                    <li>Download the
+                                        <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-windows.html">.zip</a>
+                                    </li>
+                                    <li>Go to
+                                        <b>/bin</b>
+                                        and run
+                                        <b>elasticsearch.bat</b>. You should see a terminal window showing some logs, leave it open</li>
+                                    <li>Go to your browser and open http://localhost:9200, if it showed something like :
+                                    </li>
+                                    <pre> 
+                                        {
+                                            "name" : "lkjhsqdfmoif",
+                                            "cluster_name" : "docker-cluster",
+                                            "cluster_uuid" : "lkjqhfomhfmozhfz",
+                                            "version" : {
+                                              "number" : "7.11.2",
+                                              "build_flavor" : "default",
+                                              "build_type" : "docker",
+                                              "build_hash" : " ljoqhsfmoqshzfmqzhfg",
+                                              "build_date" : "2021-03-06T05:54:38.141101Z",
+                                              "build_snapshot" : false,
+                                              "lucene_version" : "8.7.0",
+                                              "minimum_wire_compatibility_version" : "6.8.0",
+                                              "minimum_index_compatibility_version" : "6.0.0-beta1"
+                                            },
+                                            "tagline" : "You Know, for Search"
+                                          }
+                                   
+                                </pre>
+                                    Then
+                                    <b>Congraats !
+                                    </b>
+                                    you are ready to go !
+                                </ol>
+                                <li>Make sure that your arduino in plugged</li>
+                                <li>
+                                    <div class="intro2 clearfix">
+                                        <p>
+                                            <i class="fa fa-exclamation-triangle"></i>
+                                            Adapt the code to your project !
+                                            <br>
+                                            Mainly the function
+                                            <b>get_data()</b>
+                                        </p>
+                                    </div>
+                                </li>
+
+                            </ol>
+                        </section>
+                        <!-- end section -->
+
+
+                    </div>
+                    <!-- // end .col -->
 
                 </div>
-                <!-- // end .col -->
+                <!-- // end .row -->
 
             </div>
-            <!-- // end .row -->
+            <!-- // end container -->
 
         </div>
-        <!-- // end container -->
+        <!-- end wrapper -->
 
-    </div>
-    <!-- end wrapper -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/retina.js"></script>
+        <script src="js/jquery.fitvids.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/retina.js"></script>
-    <script src="js/jquery.fitvids.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
+        <!-- CUSTOM PLUGINS -->
+        <script src="js/custom.js"></script>
+        <script src="js/main.js"></script>
 
-    <!-- CUSTOM PLUGINS -->
-    <script src="js/custom.js"></script>
-    <script src="js/main.js"></script>
+        <script src="js/syntax-highlighter/scripts/shCore.js"></script>
+        <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
+        <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
+        <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
 
-    <script src="js/syntax-highlighter/scripts/shCore.js"></script>
-    <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
-    <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
-    <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
-
-</body>
+    </body>
 
 </html>
